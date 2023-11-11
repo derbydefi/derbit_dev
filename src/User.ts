@@ -1,15 +1,13 @@
 //user instance of derbit, this outlines the functionality i want users to have
-//
+// may be subject to major changes to incorporate libp2p properly
 
 import AliasServer from "./AliasServer";
 import Blockchain from "./Blockchain";
 import Block from "./Block";
-const kyber = require("crystals-kyber");
-//import kyber from "crystals-kyber";
-//const { encrypt, decrypt } = require("./aes");
 import { encrypt, decrypt } from "./aes";
 import crypto from "crypto";
-import { dilithium } from "dilithium-crystals";
+const kyber = require("crystals-kyber"); // unofficial javascript implementation (not audited)
+import { dilithium } from "dilithium-crystals"; // unofficial javascript implementation (not audited)
 
 export default class User {
 	private dilithiumKeyPair!: [Uint8Array, Uint8Array];
@@ -42,7 +40,6 @@ export default class User {
 		await user.initDilithium();
 		return user;
 	}
-
 	public getinfoTesting() {}
 	public static createUser(aliasServer: AliasServer): User {
 		// Perform any necessary setup or validations here before creating an instance

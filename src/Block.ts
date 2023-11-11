@@ -40,13 +40,13 @@ export default class Block {
 		this.previousHash = previousBlock ? previousBlock.hash : null;
 		this.hash = this.calculateHash();
 		this.next = null;
-		this.originalAuthTag = ""; // Initialize it as an empty string
+		this.originalAuthTag = ""; // Initialize it as an empty string (is this implemented correct?)
 		this.signature = signature;
 	}
 	calculateHash() {
 		return crypto
 			.createHash("sha256")
-			.update(this.serialize()) // Serialize the block data
+			.update(this.serialize()) // Serialize the block data (maybe not this way?)
 			.digest("hex");
 	}
 	//todo add serialization/deserialization properly

@@ -1,5 +1,6 @@
 //this will be a user hosted DHT that acts like a tracker for finding peers/ much like a chatroom
 // this is a placeholder but sort of explains how i want it to end up
+// may be subject to major change to implement libp2p
 export default class AliasServer {
 	// Store alias to public key mappings
 	aliasToPKMap: { [alias: string]: Uint8Array } = {};
